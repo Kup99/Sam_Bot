@@ -3,6 +3,7 @@ package com.example.sam_bot.service;
 import com.example.sam_bot.config.BotConfiguration;
 
 import com.example.sam_bot.model.Message;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -22,15 +23,12 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
 @Service
+@AllArgsConstructor
 public class BotService extends TelegramLongPollingBot {
-
     private final BotConfiguration configuration;
 
+    @Autowired
     MessageService messageService;
-
-    public BotService(BotConfiguration configuration) {
-        this.configuration = configuration;
-    }
 
     @Override
     public String getBotUsername() {
@@ -55,7 +53,7 @@ public class BotService extends TelegramLongPollingBot {
     }
 
     private void saveMessage(String message){
-        messageService.createMessage(new Message(message));
+//        messageService.createMessage(new Message(message));
     }
 
     private void startCommandReceive(long chatId, String answer) {

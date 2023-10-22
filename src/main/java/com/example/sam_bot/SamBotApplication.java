@@ -5,11 +5,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.File;
-import java.io.IOException;
-
-@SpringBootApplication
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+@ComponentScan
+//@EnableJpaRepositories("com.example.sam_bot.repository")
 public class SamBotApplication {
 
     public SamBotApplication() {

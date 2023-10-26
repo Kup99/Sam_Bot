@@ -4,6 +4,7 @@ import com.example.sam_bot.config.BotConfiguration;
 
 import com.example.sam_bot.model.Message;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -22,13 +23,13 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
-@Service
+@NoArgsConstructor
 @AllArgsConstructor
+@Service
 public class BotService extends TelegramLongPollingBot {
-    private final BotConfiguration configuration;
-
     @Autowired
-    MessageService messageService;
+    BotConfiguration configuration;
+
 
     @Override
     public String getBotUsername() {
@@ -44,16 +45,14 @@ public class BotService extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update != null && update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
-            //OpenAIClient openAIClient = new OpenAIClient();
-            //long chatId = update.getMessage().getChatId();
-           // String aiAnswer = openAIClient.getAIBotTextAnswer(messageText);
             //startCommandReceive(chatId,"SomeText");
             saveMessage(messageText);
         }
     }
 
-    private void saveMessage(String message){
-//        messageService.createMessage(new Message(message));
+    private void saveMessage(String message) {
+        MessageService messageService = new MessageService();
+        messageService.createMessage(new Message(message));
     }
 
     private void startCommandReceive(long chatId, String answer) {

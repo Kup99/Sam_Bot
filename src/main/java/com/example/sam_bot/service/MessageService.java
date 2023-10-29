@@ -1,6 +1,7 @@
 package com.example.sam_bot.service;
 
 import com.example.sam_bot.model.Message;
+import com.example.sam_bot.repository.MessageRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.jvnet.hk2.annotations.Service;
@@ -13,8 +14,10 @@ import org.springframework.stereotype.Component;
 @Service
 public class MessageService {
 
+    @Autowired
+    private MessageRepository messageRepository;
+
     public void createMessage(Message message) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.execute("INSERT INTO messages VALUES ('Stella')");
+        messageRepository.save(message);
     }
 }

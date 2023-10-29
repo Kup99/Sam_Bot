@@ -14,9 +14,9 @@ import lombok.Setter;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "message_id")
+    @Column(name = "id")
     private Long id;
-    @Column(name = "message_text")
+    @Column(name = "text")
     private String messageText;
 
     public Message(String messageText) {

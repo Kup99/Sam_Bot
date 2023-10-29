@@ -1,0 +1,1 @@
+CREATE TABLE message (id INT PRIMARY KEY ,text VARCHAR(255));

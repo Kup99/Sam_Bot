@@ -1,11 +1,9 @@
-package com.example.sam_bot.config;
+package netsurfingzone.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-
-import javax.sql.DataSource;
 
 @Data
 @Configuration

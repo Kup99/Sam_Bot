@@ -1,13 +1,12 @@
-package com.example.sam_bot.model;
+package netsurfingzone.dto;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table
+//@Entity
+//@Table
 @Setter
 @Getter
 @NoArgsConstructor

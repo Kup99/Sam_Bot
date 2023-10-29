@@ -1,4 +1,4 @@
-//package com.example.sam_bot.service;
+package netsurfingzone.service;//package com.example.sam_bot.service;
 //
 //import com.theokanning.openai.OpenAiService;
 //import com.theokanning.openai.completion.CompletionRequest;

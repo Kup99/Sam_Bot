@@ -1,6 +1,6 @@
-package com.example.sam_bot.config;
+package netsurfingzone.config;
 
-import com.example.sam_bot.service.BotService;
+import netsurfingzone.service.BotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;

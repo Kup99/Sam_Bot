@@ -1,12 +1,9 @@
-package com.example.sam_bot.service;
+package netsurfingzone.service;
 
-import com.example.sam_bot.config.BotConfiguration;
-
-import com.example.sam_bot.model.Message;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import netsurfingzone.config.BotConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -45,18 +42,18 @@ public class BotService extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update != null && update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
-            //startCommandReceive(chatId,"SomeText");
-            saveMessage(messageText);
+            long chatId = update.getMessage().getChatId();
+            startCommandReceive(chatId,"SomeText");
         }
     }
 
-    private void saveMessage(String message) {
-        MessageService messageService = new MessageService();
-        messageService.createMessage(new Message(message));
-    }
+//    private void saveMessage(String message) {
+//        MessageService messageService = new MessageService();
+//        messageService.createMessage(new Message(message));
+//    }
 
     private void startCommandReceive(long chatId, String answer) {
-        //sendMessage(chatId, answer);
+        sendMessage(chatId, answer);
     }
 
     private void sendMessage(long chatId, String textToSend) {

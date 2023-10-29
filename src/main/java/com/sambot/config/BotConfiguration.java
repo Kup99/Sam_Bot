@@ -1,4 +1,4 @@
-package netsurfingzone.config;
+package com.sambot.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

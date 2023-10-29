@@ -1,8 +1,8 @@
-package netsurfingzone.service;
+package com.sambot.service;
 
+import com.sambot.config.BotConfiguration;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import netsurfingzone.config.BotConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

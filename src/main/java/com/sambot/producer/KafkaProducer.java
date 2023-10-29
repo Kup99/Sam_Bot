@@ -1,7 +1,7 @@
-package netsurfingzone.producer;
+package com.sambot.producer;
 
-import netsurfingzone.constant.ApplicationConstant;
-import netsurfingzone.dto.Student;
+import com.sambot.constant.ApplicationConstant;
+import com.sambot.dto.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;

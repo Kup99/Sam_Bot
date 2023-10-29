@@ -1,9 +1,9 @@
-package netsurfingzone.consumer;
+package com.sambot.consumer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import netsurfingzone.constant.ApplicationConstant;
-import netsurfingzone.dto.Student;
+import com.sambot.constant.ApplicationConstant;
+import com.sambot.dto.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;

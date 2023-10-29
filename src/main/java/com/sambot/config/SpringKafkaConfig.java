@@ -1,8 +1,8 @@
-package netsurfingzone.config;
+package com.sambot.config;
 
 
-import netsurfingzone.constant.ApplicationConstant;
-import netsurfingzone.dto.Student;
+import com.sambot.constant.ApplicationConstant;
+import com.sambot.dto.Student;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

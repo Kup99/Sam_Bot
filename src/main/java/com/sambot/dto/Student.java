@@ -1,4 +1,4 @@
-package netsurfingzone.dto;
+package com.sambot.dto;
 
 import lombok.Getter;
 import lombok.Setter;

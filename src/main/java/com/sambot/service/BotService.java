@@ -1,6 +1,7 @@
 package com.sambot.service;
 
 import com.sambot.config.BotConfiguration;
+import com.sambot.dto.Message;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,10 +48,10 @@ public class BotService extends TelegramLongPollingBot {
         }
     }
 
-//    private void saveMessage(String message) {
-//        MessageService messageService = new MessageService();
-//        messageService.createMessage(new Message(message));
-//    }
+    private void saveMessage(String message) {
+        MessageService messageService = new MessageService();
+        messageService.createMessage(new Message(message));
+    }
 
     private void startCommandReceive(long chatId, String answer) {
         sendMessage(chatId, answer);

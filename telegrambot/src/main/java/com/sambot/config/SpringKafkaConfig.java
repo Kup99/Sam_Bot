@@ -1,4 +1,4 @@
-//package com.sambot.config;
+package com.sambot.config;//package com.sambot.config;
 //
 //
 //import com.sambot.constant.ApplicationConstant;

@@ -1,4 +1,4 @@
-//package com.sambot.consumer;
+package com.sambot.consumer;//package com.sambot.consumer;
 //
 //import com.fasterxml.jackson.core.JsonProcessingException;
 //import com.fasterxml.jackson.databind.ObjectMapper;

@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-        <!-- Список дочерних модулей -->
         <module>telegrambot</module>
     </modules>
 
@@ -52,7 +51,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/network/network -->
         <dependency>
             <groupId>org.projectlombok</groupId>

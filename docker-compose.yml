@@ -1,44 +1,31 @@
 version: '3.8'
 services:
-  app:
-    image: 'docker-spring-boot-postgres:latest'
-    build:
-      context: .
-    container_name: app
-    depends_on:
-      - db
-    environment:
-      - POSTGRES_USER=kirillbatutin
-      - POSTGRES_PASSWORD=
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
-      - SPRING_DATASOURCE_USERNAME=kirillbatutin
-      - SPRING_DATASOURCE_PASSWORD=
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SPRING_JPA_SHOW_SQL=true
-      - SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL=true
-      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQL81Dialect
-    ports:
-      - "8080:8080"  # Adjust according to your actual port mapping for the application
 
   db:
-    image: postgres
-    container_name: db
+    image: postgres:14.1-alpine
+    restart: always
     environment:
       - POSTGRES_USER=kirillbatutin
-      - POSTGRES_PASSWORD=
-      - POSTGRES_DB=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
-      - "5432:5432"  # Adjust according to your actual port mapping for the database
+      - '5432:5432'
+  #    volumes:
+  #      - db:/var/lib/postgresql/data
+  #      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
 
   telegrambot:
+    container_name: telegrambot
     image: telegrambot:0.0.1
     build:
-      context: .
+      context: ./telegrambot
       dockerfile: Dockerfile
     ports:
-      - "8181:8181"
-    depends_on:
-      - db
+      - 8181:8181
     environment:
-      - SERVER_PORT=8181
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+    - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+    - SPRING_DATASOURCE_USERNAME=kirillbatutin
+    - SPRING_DATASOURCE_PASSWORD=
+    - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+    depends_on:
+    - db

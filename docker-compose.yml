@@ -9,10 +9,6 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_DB=postgres
 
-  #    volumes:
-  #      - db:/var/lib/postgresql/data
-  #      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
-
   telegrambot:
     container_name: telegrambot
     image: telegrambot:0.0.1
@@ -29,3 +25,21 @@ services:
 
     depends_on:
     - db
+
+  currencyRateParser:
+    container_name: currencyRateParser
+    image: currency:0.0.1
+    build:
+      context: ./currencyRateParser
+      dockerfile: Dockerfile
+    ports:
+      - 8282:8282
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=kirillbatutin
+      - SPRING_DATASOURCE_PASSWORD=
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+    depends_on:
+      - db
+      - telegrambot

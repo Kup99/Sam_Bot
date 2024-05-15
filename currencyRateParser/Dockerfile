@@ -1,8 +1,8 @@
-# Используем официальный образ Java
-FROM openjdk:11-jre-slim
+FROM amazoncorretto:17-alpine-jdk
 
-# Устанавливаем рабочий каталог
-WORKDIR /app
+WORKDIR /opt/app
+
+ARG JAR_FILE=target/currencyRateParser-0.0.1-SNAPSHOT.jar
 
 # Копируем JAR файл в контейнер
 COPY ./target/currencyRateParser-0.0.1-SNAPSHOT.jar /app/currencyRateParser.jar

@@ -28,6 +28,9 @@ public class BotService extends TelegramLongPollingBot {
     @Autowired
     BotConfiguration configuration;
 
+    @Autowired
+    MessageService messageService;
+
 
     @Override
     public String getBotUsername() {
@@ -44,6 +47,7 @@ public class BotService extends TelegramLongPollingBot {
         if (update != null && update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
+            messageService.createMessage(new Message(messageText));
             startCommandReceive(chatId,"SomeText");
         }
     }

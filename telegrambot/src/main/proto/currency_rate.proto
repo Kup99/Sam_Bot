@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.currencyParser.grpc;
+
+service CurrencyRateService {
+  rpc getCurrencyRate (CurrencyRateRequest) returns (CurrencyRateResponse);
+}
+
+message CurrencyRateRequest {
+  string currency = 1;
+  string date = 2;
+}
+
+message CurrencyRateResponse {
+  string value = 1;
+}

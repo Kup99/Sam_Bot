@@ -11,4 +11,4 @@ COPY ./target/telegrambot-0.0.1-SNAPSHOT.jar /app/telegrambot.jar
 EXPOSE 8181
 
 # Проверьте, что путь в CMD соответствует местоположению файла
-CMD ["java", "-jar", "/app/telegrambot.jar"]
+CMD ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006", "-jar", "/app/telegrambot.jar"]

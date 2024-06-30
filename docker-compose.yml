@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   db:
     image: postgres:14.1-alpine
@@ -37,6 +38,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8181:8181"
+      - "5006:5006"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
       - SPRING_DATASOURCE_USERNAME=kirillbatutin
@@ -53,7 +55,7 @@ services:
       context: ./currencyRateParser
       dockerfile: Dockerfile
     ports:
-      - "8282:8282"
+      - "8081:8081"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
       - SPRING_DATASOURCE_USERNAME=kirillbatutin

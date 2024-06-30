@@ -18,6 +18,11 @@
         <java.version>17</java.version>
     </properties>
 
+    <modules>
+        <module>currencyRateParser</module>
+        <module>telegrambot</module>
+    </modules>
+
     <build>
         <plugins>
             <plugin>
@@ -26,5 +31,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

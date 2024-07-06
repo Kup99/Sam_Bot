@@ -1,5 +1,5 @@
 
-FROM amazoncorretto:17-alpine-jdk
+FROM amazoncorretto:21-alpine-jdk
 
 WORKDIR /opt/app
 

@@ -1,12 +1,12 @@
-package com.sambot.controller;
-
-import com.sambot.kafka.KafkaProducer;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class KafkaController {
+//package com.sambot.controller;
+//
+//import com.sambot.kafka.KafkaProducer;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RestController;
+//
+//@RestController
+//public class KafkaController {
 
 //    private final KafkaProducer kafkaProducer;
 //
@@ -20,5 +20,5 @@ public class KafkaController {
 //        return "success";
 //    }
 
-
-}
+//
+//}
